@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  background-size: 400% 400%;
+  animation: move 10s ease infinite;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 60px;
+}
+
+@keyframes move {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+h1 {
+  color: #00e5ff;
+  text-shadow: 0 0 10px #00e5ff;
+  margin-bottom: 40px;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 200px 400px;
+  grid-template-rows: repeat(3, 90px);
+  gap: 20px 30px;
+}
+
+.card:nth-child(1) { grid-column: 1; grid-row: 1; }
+.card:nth-child(2) { grid-column: 1; grid-row: 2; }
+.card:nth-child(3) { grid-column: 1; grid-row: 3; }
+
+.main-card {
+  grid-column: 2;
+  grid-row: 1 / span 3; /* span all rows */
+
+  align-self: center; /* vertical center */
+  justify-self: center;
+
+  width: 400px;
+  height: 220px;
+  border-radius: 15px;
+  border: 2px solid #00e5ff;
+  box-shadow: 0 0 20px rgba(0,229,255,0.4);
+  background: rgba(255,255,255,0.05);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.main-card h2 {
+  font-size: 60px;
+  margin: 0;
+  color: #00ff99;
+  text-shadow: 0 0 15px #00ff99;
+}
+
+.main-card p {
+  margin-top: 10px;
+  letter-spacing: 2px;
+}
+
+.card {
+  width: 200px;
+  height: 90px;
+  border-radius: 12px;
+  border: 2px solid #00e5ff;
+  background: rgba(255,255,255,0.05);
+  box-shadow: 0 0 15px rgba(0,229,255,0.4);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.card h3 {
+  margin: 0;
+  color: #00ff99;
+  text-shadow: 0 0 10px #00ff99;
+}
+
+.card p {
+  margin: 5px 0 0;
+  font-size: 12px;
+}
+
+a {
+  margin-top: 40px;
+  color: #00e5ff;
+  text-decoration: none;
+  border: 2px solid #00e5ff;
+  padding: 10px 25px;
+  border-radius: 8px;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+a:hover {
+  background-color: #00e5ff;
+  color: #000;
+  box-shadow: 0 0 15px #00e5ff;
+}
+</style>
+</head>
+
+<body>
+
+<h1>📈 Dashboard</h1>
+
+<div class="dashboard">
+
+  <!-- LEFT SIDE -->
+  <div class="card">
+    <h3 id="quiz">0</h3>
+    <p>Quiz Uploads</p>
+  </div>
+
+  <div class="card">
+    <h3 id="act">0</h3>
+    <p>Activity Uploads</p>
+  </div>
+
+  <div class="card">
+    <h3 id="exam">0</h3>
+    <p>Exam Uploads</p>
+  </div>
+
+  <!-- RIGHT SIDE (CENTERED) -->
+  <div class="main-card">
+    <h2 id="total">0</h2>
+    <p>Total Uploads</p>
+  </div>
+
+</div>
+
+<a href="index.html">← Back to Portfolio</a>
+
+<script>
+let quiz = 3;
+let act = 0;
+let exam = 0;
+
+let total = quiz + act + exam;
+
+document.getElementById("quiz").innerText = ">" + quiz;
+document.getElementById("act").innerText = ">" + act;
+document.getElementById("exam").innerText = ">" + exam;
+document.getElementById("total").innerText = ">" + total;
+</script>
+
+</body>
+</html>

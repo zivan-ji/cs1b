@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACTIVITIES - Angelica Fuga</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      background-size: 400% 400%;
+      animation: move 10s ease infinite;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding-top: 80px;
+    }
+
+    @keyframes move {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    h1 {
+      color: #00e5ff;
+      margin-bottom: 40px;
+      text-align: center;
+      font-size: 2em;
+      letter-spacing: 1px;
+      text-shadow: 0 0 10px #00e5ff;
+    }
+
+    .photo-row {
+      display: flex;
+      flex-wrap: wrap; 
+      justify-content: center;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+
+    .photo-box {
+      background-color: rgba(255, 255, 255, 0.1);
+      border: 2px solid #00e5ff;
+      box-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
+      border-radius: 15px;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 250px;
+      height: 250px;
+      transition: transform 0.3s ease;
+    }
+
+    .photo-box:hover {
+      transform: scale(1.05);
+    }
+
+    .photo-box img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 3px solid #00e5ff;
+      box-shadow: 0 0 15px #00e5ff;
+    }
+
+    a {
+      margin-top: 10px;
+      color: #00e5ff;
+      text-decoration: none;
+      border: 2px solid #00e5ff;
+      padding: 10px 25px;
+      border-radius: 8px;
+      transition: 0.3s;
+      font-weight: bold;
+    }
+
+    a:hover {
+      background-color: #00e5ff;
+      color: #000;
+      box-shadow: 0 0 15px #00e5ff;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>⚙️ ACTIVITIES</h1>
+
+  <div class="photo-row">
+    <div class="photo-box">
+      <img src="activity1.jpg" alt="Activity 1">
+    </div>
+    <div class="photo-box">
+      <img src="activity2.jpg" alt="Activity 2">
+    </div>
+    <div class="photo-box">
+      <img src="activity3.jpg" alt="Activity 3">
+    </div>
+  </div>
+
+  <a href="index.html">← Back to Portfolio</a>
+
+</body>
+</html>

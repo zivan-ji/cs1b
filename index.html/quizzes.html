@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quizzes</title>
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  background-size: 400% 400%;
+  animation: move 10s ease infinite;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 80px;
+}
+
+@keyframes move {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+h1 {
+  color: #00e5ff;
+  margin-bottom: 40px;
+  text-align: center;
+  font-size: 2em;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px #00e5ff;
+}
+
+.photo-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.photo-box {
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 2px solid #00e5ff;
+  box-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
+  border-radius: 15px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 250px;
+  transition: transform 0.3s ease;
+}
+
+.photo-box:hover {
+  transform: scale(1.05);
+}
+
+.photo-box img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 3px solid #00e5ff;
+  box-shadow: 0 0 15px #00e5ff;
+  cursor: pointer;
+}
+
+a {
+  margin-top: 10px;
+  color: #00e5ff;
+  text-decoration: none;
+  border: 2px solid #00e5ff;
+  padding: 10px 25px;
+  border-radius: 8px;
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+a:hover {
+  background-color: #00e5ff;
+  color: #000;
+  box-shadow: 0 0 15px #00e5ff;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease;
+  z-index: 1000;
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.overlay img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+  border: 3px solid #00e5ff;
+  box-shadow: 0 0 25px #00e5ff;
+  transform: scale(0.8);
+  transition: 0.3s ease;
+}
+
+.overlay.active img {
+  transform: scale(1);
+}
+
+.overlay h2 {
+  margin-top: 15px;
+  color: #00e5ff;
+  text-shadow: 0 0 10px #00e5ff;
+}
+</style>
+</head>
+
+<body>
+
+<h1>📘 QUIZZES</h1>
+
+<div class="photo-row">
+  <div class="photo-box">
+    <img src="quiz1.jpg" alt="Quiz 1">
+  </div>
+  <div class="photo-box">
+    <img src="quiz2.jpg" alt="Quiz 2">
+  </div>
+  <div class="photo-box">
+    <img src="quiz3.1.jpg" alt="Quiz 3.1">
+  </div>
+  <div class="photo-box">
+    <img src="quiz3.2.jpg" alt="Quiz 3.2">
+  </div>
+</div>
+
+<a href="index.html">← Back to Portfolio</a>
+
+
+<div class="overlay" id="overlay">
+  <img id="overlayImg" src="">
+  <h2 id="overlayTitle"></h2>
+</div>
+
+<script>
+const images = document.querySelectorAll(".photo-box img");
+const overlay = document.getElementById("overlay");
+const overlayImg = document.getElementById("overlayImg");
+const overlayTitle = document.getElementById("overlayTitle");
+
+let isOpen = false;
+
+images.forEach(img => {
+  img.addEventListener("click", () => {
+    if (!isOpen) {
+      overlay.classList.add("active");
+      overlayImg.src = img.src;
+      overlayTitle.textContent = img.alt; // SHOW TITLE
+      isOpen = true;
+    }
+  });
+});
+
+overlay.addEventListener("click", () => {
+  overlay.classList.remove("active");
+  isOpen = false;
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Angelica Fuga - Portfolio</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      background-size: 400% 400%;
+      animation: gradientMove 10s ease infinite;
+      color: #fff;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(10px);
+      color: #00e5ff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      box-shadow: 0 0 10px #00e5ff;
+      z-index: 10;
+    }
+
+    nav h1 {
+      font-size: 20px;
+      letter-spacing: 1px;
+    }
+
+    .hamburger {
+      display: block;
+      cursor: pointer;
+      width: 30px;
+      height: 22px;
+      position: relative;
+    }
+
+    .hamburger span {
+      background: #00e5ff;
+      position: absolute;
+      width: 100%;
+      height: 3px;
+      border-radius: 5px;
+      transition: 0.4s;
+    }
+
+    .hamburger span:nth-child(1) {
+      top: 0;
+    }
+
+    .hamburger span:nth-child(2) {
+      top: 9px;
+    }
+
+    .hamburger span:nth-child(3) {
+      top: 18px;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg);
+      top: 9px;
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg);
+      top: 9px;
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      right: 40px;
+      top: 60px;
+      background-color: white;
+      min-width: 150px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .dropdown a {
+      display: block;
+      color: black;
+      text-decoration: none;
+      padding: 12px 15px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .dropdown a:hover {
+      background-color: #f1f1f1;
+    }
+
+    .dropdown.show {
+      display: block;
+    }
+
+    table {
+      border: 2px solid #00e5ff;
+      background-color: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(5px);
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
+      color: #e0e0e0;
+    }
+
+    td {
+      padding: 10px;
+    }
+
+    img {
+      border-radius: 10px;
+      border: 3px solid #00e5ff;
+      box-shadow: 0 0 15px #00e5ff;
+    }
+
+    .content {
+      margin-top: 80px;
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <h1>Angelica Fuga | Portfolio</h1>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="dropdown" id="dropdown">
+      <a href="home.html">Home</a>
+      <a href="quizzes.html">Quizzes</a>
+      <a href="activities.html">Activities</a>
+      <a href="exams.html">Exams</a>
+      <a href="dashboard.html">Dashboard</a>
+    </div>
+  </nav>
+
+  <div class="content">
+    <table border="2" width="450px" height="650">
+      <tr>
+        <td colspan="2" style="text-align: center; padding: 20px;">
+          <img src="fuga.jpg" alt="fuga" width="150" height="150" border="2">
+        </td>
+      </tr>
+
+      <tr>
+        <td width="150px"><b>Name:</b> Angelica Enano Fuga</td>
+      </tr>
+
+      <tr>
+        <td><b>Student Number:</b> 251101010</td>
+      </tr>
+
+      <tr>
+        <td><b>Course:</b> Bachelor of Science in Computer Science</td>
+      </tr>
+
+      <tr>
+        <td><b>Section:</b> BSCS-1B</td>
+      </tr>
+
+      <tr>
+        <td colspan="2" style="padding: 15px;">
+          I am a first-year college student with an interest in technology and problem-solving. 
+          I am passionate about learning, creating, and exploring new ideas. Beyond academics,
+          I enjoy playing guitar, watch movies, and read poetry, which enhance my creativity
+          and perspective.
+          I am motivated, curious, and committed to personal and professional growth.
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const dropdown = document.getElementById('dropdown');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      dropdown.classList.toggle('show');
+    });
+  </script>
+
+</body>
+</html>
